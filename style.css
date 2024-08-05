@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 70px;
+    background-color: orange;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: 
+    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+    url('image/images/back.jpeg');
+    background-size: cover; 
+    background-position: center; 
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 25px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    width: calc(33.333% - 40px);
+    box-sizing: border-box;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.product button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #0056b3;
+}
+
+form {
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.biodata-table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+}
+
+.biodata-table td {
+    padding: 10px;
+}
+
+.biodata-table img {
+    max-width: 100%;
+    height: auto;
+}
+
+.centered {
+    text-align: center;
+}
+
+hr {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.invoice-box {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.invoice-box h1, .invoice-box h2, .invoice-box h3 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.invoice-box h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.invoice-box p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.invoice-header, .customer-details, .footer {
+    margin-bottom: 20px;
+}
+
+.company-details, .invoice-details {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.company-details {
+    width: 60%;
+}
+
+.invoice-details {
+    width: 35%;
+    text-align: right;
+}
+
+.invoice-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.invoice-box table th, .invoice-box table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.invoice-box table th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.invoice-box .total {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.invoice-box .total p {
+    margin: 5px 0;
+}
+
+.invoice-box .footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+}
+
+footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 130px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-section-4 {
+    text-align: center;
+}
+
+.footer-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .container, nav ul, .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 100%;
+    }
+
+    form {
+        width: 80%;
+    }
+
+    .invoice-details {
+        width: 100%;
+        text-align: center;
+    }
+
+    .company-details {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-section {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    .invoice-box {
+        padding: 10px;
+    }
+
+    .invoice-box table th, .invoice-box table td {
+        padding: 5px;
+    }
+
+    .footer-section img {
+        width: 80px;
+    }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Transaksi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<body>
+    <header>
+        <div>
+            <div>
+                <p style="font-family: 'Times New Roman', Times, serif;">Victory Shop</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="transaksi.html"class="disabled" style="pointer-events: none; color: black;">Transaction</a></li>
+                <li><a href="invoice.html"class="disabled" style="pointer-events: none; color: black;">Invoice</a></li>
+                <li><a href="kontak.html">Contact</a></li>
+            </ul>
+        </nav>
+    </main>
+    
+
+
+    <h1 align="center">Form Transaksi</h1>
+    <form id="transaction-form">
+        <label for="name">Nama Barang:</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="harga">Harga Barang:</label>
+        <input type="text" id="harga" name="harga" required>
+    
+        <label for="alamat">Alamat :</label>
+        <input type="text" id="alamat" name="alamat" required>
+        
+        <label for="phone">Nomor Telepon:</label>
+        <input type="tel" id="phone" name="phone" required>
+    
+        <label for="pembayaran">Metode Pembayaran :</label>
+        <select id="pembayaran" name="pembayaran" required style="font-size: 16px; padding: 10px;">
+            <option value="">Pilih Metode Pembayaran</option>
+            <option value="kartu kredit">Kartu Kredit</option>
+            <option value="transfer bank">Transfer Bank</option>
+            <option value="dompet digital">Dompet Digital</option>
+            <option value="cod">Cash on Delivery (COD)</option>
+        </select>
+        
+    
+        <label for="pesanan">Total Pesanan :</label>
+        <input type="text" id="pesanan" name="pesanan" required>
+        <button type="button" id="submit-btn" onclick="checkout()" disabled>Buat Pesanan</button>
+    </form>
+    
+    
+    </form>
+    <script src="script.js"></script>
+    <footer>
+        <div class="footer-section">
+            <h4>Tentang Kami</h4>
+            <p ><a href="homepage.html"style="color: black;">Home</a></p>
+            <p>
+               <a href="kontak.html" style="color: black;">Contact</a>
+            </p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p>Email:alvarezsyamil@gmail.com</p>
+            <P>No Telpon:+62 813-1334-7719 </P>
+        </div>
+        <div class="footer-section">
+            <h4>Support</h4>
+            <p>UNIKOM</p>
+        </div>
+        <div class="footer-section footer-section-4">
+            <h4>Get Our App</h4>
+            <img src="image/images/App-Store.png" alt="App Store">
+            <img src="image/images/Google-Play.png" alt="Google Play">
+        </div>
+    </footer>
+</body>
+</body>
+<script>
+     
+           // Mengisi kolom input dengan data dari URL
+           document.addEventListener('DOMContentLoaded', () => {
+            const { name, price } = getQueryParams();
+            if (name && price) {
+                document.getElementById('name').value = name;
+                document.getElementById('harga').value = price;
+            }
+            validateForm(); // Initial validation check
+        });
+
+        // Fungsi untuk mengambil parameter URL
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get('name'),
+                price: params.get('price')
+            };
+        }
+
+        // Fungsi untuk validasi form
+        function validateForm() {
+            const form = document.getElementById('transaction-form');
+            const isValid = form.checkValidity();
+            document.getElementById('submit-btn').disabled = !isValid;
+        }
+
+        // Attach event listeners to input fields
+        document.querySelectorAll('#transaction-form input, #transaction-form select').forEach(input => {
+            input.addEventListener('input', validateForm);
+        });
+
+        // Checkout function
+        function checkout() {
+            const name = document.getElementById('name').value;
+            const harga = document.getElementById('harga').value;
+            const alamat = document.getElementById('alamat').value;
+            const phone = document.getElementById('phone').value;
+            const pembayaran = document.getElementById('pembayaran').value;
+            const pesanan = document.getElementById('pesanan').value;
+
+            const invoiceData = {
+                name: name,
+                harga: harga,
+                alamat: alamat,
+                phone: phone,
+                pembayaran: pembayaran,
+                pesanan: pesanan,
+            };
+
+            localStorage.setItem('invoiceData', JSON.stringify(invoiceData));
+            window.location.href = 'invoice.html';
+        }
+
+
+</script>
+</html>
